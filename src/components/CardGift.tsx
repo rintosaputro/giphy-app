@@ -1,7 +1,13 @@
-const CardGift = () => {
+import { FC } from "react";
+
+interface CardGiftProps {
+  assetImage: string;
+}
+
+const CardGift: FC<CardGiftProps> = ({ assetImage }) => {
   return (
-    <div className="shadow-sm shadow-black-500/50 w-auto min-h-[200px] border-2">
-      <p>Gambar</p>
+    <div className="w-auto flex items-center">
+      <img src={assetImage} alt="gif" width="100%" className="shadow-lg shadow-black-500/10" />
     </div>
   );
 };
