@@ -1,19 +1,29 @@
-import { GiphyDataInterface } from "../../utils/interfaces";
 import { ActionType } from "./action";
 
-interface ActionInterface {
-  type: string;
-  payload: {
-    ironMans: GiphyDataInterface[];
-  };
-}
+const initialState = {
+  isLoading: true,
+  data: [],
+};
 
-const ironMansReducer = (ironMans = [], action: ActionInterface) => {
+const ironMansReducer = (state = initialState, action: any = {}) => {
   switch (action.type) {
+    case ActionType.START_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
     case ActionType.RECEIVE_IRON_MANS:
-      return action.payload.ironMans;
+      return {
+        ...state,
+        data: action.payload.ironMans,
+      };
+    case ActionType.END_LOADING:
+      return {
+        ...state,
+        isLoading: false,
+      };
     default:
-      return ironMans;
+      return state;
   }
 };
 
