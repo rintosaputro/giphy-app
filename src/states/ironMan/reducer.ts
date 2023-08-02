@@ -1,4 +1,5 @@
 import { ActionType } from "./action";
+import { ActionType as ActionTypeLoading } from "../loading/action";
 
 const initialState = {
   isLoading: true,
@@ -7,7 +8,7 @@ const initialState = {
 
 const ironMansReducer = (state = initialState, action: any = {}) => {
   switch (action.type) {
-    case ActionType.START_LOADING:
+    case ActionTypeLoading.START_LOADING:
       return {
         ...state,
         isLoading: true,
@@ -17,7 +18,7 @@ const ironMansReducer = (state = initialState, action: any = {}) => {
         ...state,
         data: action.payload.ironMans,
       };
-    case ActionType.END_LOADING:
+    case ActionTypeLoading.END_LOADING:
       return {
         ...state,
         isLoading: false,
