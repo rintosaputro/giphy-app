@@ -15,7 +15,7 @@ const IronManPage = () => {
   return (
     <main className="container p-10 max-w-7xl m-auto">
       <HeaderText>IRON MAN GIPHY</HeaderText>
-      <ListGift />
+      <ListGift page="ironMan" />
     </main>
   );
 };

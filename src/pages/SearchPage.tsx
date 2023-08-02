@@ -16,7 +16,7 @@ const SearchPage = () => {
           onChange={onChangeSearch}
         />
       </form>
-      <ListGift />
+      <ListGift page="search" />
     </main>
   );
 };

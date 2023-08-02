@@ -17,7 +17,7 @@ const HomePage = () => {
       >
         IRON MAN GIPHY
       </Link>
-      <Link to="/" className="text-blue-600 underline font-medium mt-3">
+      <Link to="/search" className="text-blue-600 underline font-medium mt-3">
         SEARCH YOUR GIPHY
       </Link>
     </main>
