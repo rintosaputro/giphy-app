@@ -10,9 +10,10 @@ interface ListGiftProps {
 }
 
 const ListGift: FC<ListGiftProps> = ({ page }) => {
-  const { ironMan } = useSelector((state: RootState) => state);
+  const ironMan = useSelector((state: RootState) => state.ironMan);
+  const searchResult = useSelector((state: RootState) => state.searchResult);
 
-  const { data, isLoading } = page === "ironMan" ? ironMan : ironMan;
+  const { data, isLoading } = page === "ironMan" ? ironMan : searchResult;
 
   if (isLoading) {
     return (
@@ -26,7 +27,7 @@ const ListGift: FC<ListGiftProps> = ({ page }) => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9 md:gap-14 mt-16 md:mt-28 mb-14 md:mb-20">
       {data.map((item: GiphyDataInterface, index: number) => (
-        <CardGift assetImage={item.images.original.url} key={index} />
+        <CardGift assetImage={item.images.fixed_width.url} key={index} />
       ))}
     </section>
   );

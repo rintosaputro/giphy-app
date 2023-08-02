@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ironMansReducer from "./ironMan/reducer";
+import searchResultReducer from "./search/reducer";
 
 const store = configureStore({
   reducer: {
     ironMan: ironMansReducer,
+    searchResult: searchResultReducer,
   },
 });
 
