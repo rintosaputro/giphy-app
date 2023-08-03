@@ -1,6 +1,8 @@
 const api = (() => {
-  const baseUrl = import.meta.env.VITE_BASE_URL;
-  const trendingUrl = import.meta.env.VITE_TRENDING_URL;
+  const baseUrl =
+    "https://api.giphy.com/v1/gifs/search?api_key=4NhEwr0foNONud8cq3loQwf0EciWiHgk&limit=9&offset=0&rating=g&lang=en&bundle=messaging_non_clips";
+  const trendingUrl =
+    "https://api.giphy.com/v1/gifs/trending?api_key=4NhEwr0foNONud8cq3loQwf0EciWiHgk&limit=9&offset=0&rating=g&bundle=messaging_non_clips";
 
   const getIronMans = async () => {
     const response = await fetch(`${baseUrl}&q=iron+man`);
